@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+   
+    <script src="https://kit.fontawesome.com/f545924fce.js" crossorigin="anonymous"></script>
+   
+
+    <title>Alram Clock</title>
+  </head>
+  <body>
+
+ 
+  <div class="alram_clock">
+      <div class="image_clock">
+        <img src="../Asset/142.jpg" alt="" />
+      </div>
+      <h1 style="color:rgba(78, 180, 228, 0.959); font-size: 50px;">Alram</h1>
+     
+     
+
+      
+
+      <div class="current_time">
+        <h1 id="time"></h1>
+        
+      </div>
+
+      <div class="alram_box">
+        <div class="addAlram">
+          <form action="">
+            
+            <input type="number"  required name="hour" placeholder="Hour" id="hour" min ="00" max="12">
+            <input type="number" required name="minute" placeholder="Minute" id="minute" min ="0"  max ="59" >
+            <input type="number" required name="second" placeholder="Second" id="second" min ="0"  max ="59" >
+            <select name="ampm" id="ampm">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+           
+      
+          
+
+            <button type="submit" class="pushable">
+              
+              <span class="front">
+                ADD
+              </span>
+            </button>
+          </form>
+        </div>
+        <div id="alram" class="alram">
+
+          
+          
+        </div>
+     
+        
+        
+      </div>
+
+    
+     
+    </div>
+    <script src="../JAVASCRIPT/script.js"></script>
+   
+  </body>
+</html>
