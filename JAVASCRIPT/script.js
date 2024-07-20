@@ -37,8 +37,9 @@ form.addEventListener('submit', function(event) {
   let ampm = document.getElementById('ampm').value;
 
 
-
+// to add alarm
   addAlram(hour, minute,second,ampm);
+  // to check alarm
   checkTime(hour,minute,second,ampm);
 
 
@@ -60,8 +61,9 @@ function addAlram(hour, minute,second,ampmCheck) {
   alramTime.push(newAlarm); // Add the new alarm to the alramTime array
   
 
-  // Update the content of the element with ID 'allalram'
-  allalram.innerHTML = "";
+  
+
+     // changing in dom using inner.html and delete button 
   allalram.innerHTML = alramTime.map(alarm => ` <div class="blocks">
             <h1>${alarm.hour}:${alarm.minute}:${alarm.second}:${alarm.ampm}</h1>
             <button onClick="removeAlram(${alarm.hour},${alarm.minute},${alarm.second},'${alarm.ampm}')"> <i class="fa-solid fa-trash" style="color: red ;"></i></button> 
@@ -84,9 +86,10 @@ function removeAlram(hour,minute,second,ampm)
         break;
      }
   }
-   // changing in dom using inner.html
+   // changing in dom using inner.html and delete button 
    allalram.innerHTML = alramTime.map(alarm => ` <div class="blocks">
     <h1>${alarm.hour}:${alarm.minute}:${alarm.second}:${alarm.ampm}</h1>
+  
     <button onClick="removeAlram(${alarm.hour},${alarm.minute},${alarm.second},'${alarm.ampm}')"> <i class="fa-solid fa-trash" style="color: #e60a0a;"></i></button> 
   </div>`).join('');
 
