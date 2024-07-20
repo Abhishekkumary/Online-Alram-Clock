@@ -128,7 +128,7 @@ function checkTime(hour, minute,ampm) {
       const element = alramTime[index];
       console.log(hours,element.hour,minutes,element.minute );
       
-      if (element.hour == hours && element.minute == minutes && element.second == date.getSeconds()) {
+      if (element.hour == hours && element.minute == minutes && element.second == date.getSeconds() && element.ampm == newformat ) {
         alert("Time Up");
       }
     }
