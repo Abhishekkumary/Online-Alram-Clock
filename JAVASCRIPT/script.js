@@ -24,7 +24,7 @@ let time1 = setInterval(() => {
 const form = document.querySelector('.addAlram form');
 const allalram =document.getElementById('alram');
 const alramTime = [];
-console.log(alramTime);
+
 
 
 
@@ -36,7 +36,7 @@ form.addEventListener('submit', function(event) {
   const second = parseInt(document.getElementById('second').value, 10);
   let ampm = document.getElementById('ampm').value;
 
-  console.log(hour);
+
 
   addAlram(hour, minute,second,ampm);
   checkTime(hour,minute,second,ampm);
@@ -58,7 +58,7 @@ function addAlram(hour, minute,second,ampmCheck) {
   
 
   alramTime.push(newAlarm); // Add the new alarm to the alramTime array
-  console.log(alramTime);
+  
 
   // Update the content of the element with ID 'allalram'
   allalram.innerHTML = "";
@@ -77,10 +77,9 @@ function removeAlram(hour,minute,second,ampm)
   
   //all alram  itraation using for loop
   for(let i=0 ;  alramTime.length >= i; i++){
-    console.log(i);
+   
     if( alramTime[i].hour == hour && alramTime[i].minute == minute &&  alramTime[i].second == second &&  alramTime[i].ampm == ampm)
       {
-        console.log(hour, minute)
        alramTime.splice(i,1);
         break;
      }
@@ -126,8 +125,6 @@ function checkTime(hour, minute,ampm) {
     //To check time from all alram
     for (let index = 0; index < alramTime.length; index++) {
       const element = alramTime[index];
-      console.log(hours,element.hour,minutes,element.minute );
-      
       if (element.hour == hours && element.minute == minutes && element.second == date.getSeconds() && element.ampm == newformat ) {
         alert("Time Up");
       }
