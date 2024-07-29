@@ -1,0 +1,97 @@
+body{
+    margin: 0px;
+    background-image: url("./pexels-catscoming-707582.jpg");
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Main container  */
+.main-container {
+    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+
+
+  
+}
+
+/* Center the alarm_box */
+.alram_box {
+  padding: 20px; 
+  border: 1px solid gray; 
+  text-align: center; 
+  border-radius: 10px;
+  width: 45%;
+  align-items: center;
+  overflow: hidden;
+  background-color: lightslategray;
+  opacity: 0.9;
+
+
+}
+
+
+.blocks h1 , button{
+    display: inline-block;
+  
+    font-size: 40px;
+    
+   
+}
+.blocks h1{
+   position:relative;
+  left: -15%;
+    
+}
+.blocks button{
+    position: relative;
+    background-color: lightslategray;
+     border: 0ch;
+    left: 15%;
+}
+
+.blocks{
+    display: block;
+    width: 100%;
+   
+    border-bottom: solid 2px;
+
+}
+
+
+
+
+
+/* Style the form to display elements in a row */
+.addAlram form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between form elements */
+}
+
+/* Form elements styling */
+.addAlram input, .addAlram select, .addAlram button {
+  margin: 5px;
+  padding: 10px;
+ font-size: 1.5rem;
+ border-radius: 10px;
+}
+
+/* Optional: Styling for other elements */
+.image-container img {
+  max-width: 100%;
+  height: 200px;
+}
+
+.current_time {
+  margin-bottom: 20px;
+  font-size: 40px;
+  color: white;
+}

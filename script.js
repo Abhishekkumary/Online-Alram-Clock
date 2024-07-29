@@ -21,6 +21,7 @@ let time1 = setInterval(() => {
  time.innerHTML= hours + ':' + minutes + ':' + second +' ' + newformat;
 }, 1000);
 
+
 const form = document.querySelector('.addAlram form');
 const allalram =document.getElementById('alram');
 const alramTime = [];
@@ -48,28 +49,49 @@ form.addEventListener('submit', function(event) {
 
 
 
-function addAlram(hour, minute,second,ampmCheck) {
-  // Create new alarm object
-  const newAlarm = {
-    hour: hour,
-    minute: minute,
-    second:second,
-    ampm : ampmCheck
-  };
+function addAlram(hour, minute, second, ampmCheck) {
+
+
+    hour=hour<10 ? '0'+ hour :hour;
+    minute = minute < 10 ? '0' + minute : minute;
+    second=second<10? '0'+ second:second;
+    // Create new alarm object
+    const newAlarm = {
+      hour: hour,
+      minute: minute,
+      second: second,
+      ampm: ampmCheck
+    };
+
+
   
-
-  alramTime.push(newAlarm); // Add the new alarm to the alramTime array
   
-
+    // Check if the alarm already exists in the alramTime array
+    const alarmExists = alramTime.some(alarm =>
+      alarm.hour === newAlarm.hour &&
+      alarm.minute === newAlarm.minute &&
+      alarm.second === newAlarm.second &&
+      alarm.ampm === newAlarm.ampm
+    );
   
-
-     // changing in dom using inner.html and delete button 
-  allalram.innerHTML = alramTime.map(alarm => ` <div class="blocks">
-            <h1>${alarm.hour}:${alarm.minute}:${alarm.second}:${alarm.ampm}</h1>
-            <button onClick="removeAlram(${alarm.hour},${alarm.minute},${alarm.second},'${alarm.ampm}')"> <i class="fa-solid fa-trash" style="color: red ;"></i></button> 
-          </div>`).join('');
-
-}
+    // If the alarm does not exist, add it to the array and update the DOM
+    if (!alarmExists) {
+      alramTime.push(newAlarm);
+  
+      // Update the DOM using innerHTML and add a delete button
+      allalram.innerHTML = alramTime.map(alarm => `
+        <div class="blocks">
+          <h1>${alarm.hour}:${alarm.minute}:${alarm.second}:${alarm.ampm}</h1>
+          <button onClick="removeAlram(${alarm.hour}, ${alarm.minute}, ${alarm.second}, '${alarm.ampm}')">
+            <i class="fa-solid fa-trash" style="color: red;"></i>
+          </button>
+        </div>
+      `).join('');
+    } else {
+      alert('Alarm already exists!');
+    }
+  }
+  
 
 
 
@@ -129,16 +151,11 @@ function checkTime(hour, minute,ampm) {
     for (let index = 0; index < alramTime.length; index++) {
       const element = alramTime[index];
       if (element.hour == hours && element.minute == minutes && element.second == date.getSeconds() && element.ampm == newformat ) {
-        alert("Time Up");
+        document.getElementById('alarmSound').play(); 
+       
+       
       }
     }
   }, 1000);
 }
-
-
-
-
-
-
-
 
