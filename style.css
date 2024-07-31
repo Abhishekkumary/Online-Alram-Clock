@@ -1,71 +1,55 @@
-body{
-    margin: 0px;
-    background-image: url("./pexels-catscoming-707582.jpg");
+body {
+  margin: 0px;
+  background-image: url("./pexels-catscoming-707582.jpg");
 }
 
 html, body {
   height: 100%;
 }
 
-/* Main container  */
+/* Main container */
 .main-container {
-    
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
-
-
-  
 }
 
 /* Center the alarm_box */
 .alram_box {
-  padding: 20px; 
-  border: 1px solid gray; 
-  text-align: center; 
+  padding: 20px;
+  border: 1px solid gray;
+  text-align: center;
   border-radius: 10px;
-  width: 60%;
+  width: 50%;
   align-items: center;
   overflow: hidden;
   background-color: lightslategray;
   opacity: 0.9;
-
-
 }
 
-
-.blocks h1 , button{
-    display: inline-block;
-  
-    font-size: 40px;
-    
-   
+.blocks h1, button {
+  display: inline-block;
+  font-size: 40px;
 }
-.blocks h1{
-   position:relative;
+
+.blocks h1 {
+  position: relative;
   left: -15%;
-    
-}
-.blocks button{
-    position: relative;
-    background-color: lightslategray;
-     border: 0ch;
-    left: 15%;
 }
 
-.blocks{
-    display: block;
-    width: 95%;
-   
-    border-bottom: solid 2px;
-
+.blocks button {
+  position: relative;
+  background-color: lightslategray;
+  border: none;
+  left: 15%;
 }
 
-
-
-
+.blocks {
+  display: block;
+  width: 95%;
+  border-bottom: solid 2px;
+}
 
 /* Style the form to display elements in a row */
 .addAlram form {
@@ -80,8 +64,8 @@ html, body {
 .addAlram input, .addAlram select, .addAlram button {
   margin: 5px;
   padding: 10px;
- font-size: 1.5rem;
- border-radius: 10px;
+  font-size: 1.5rem;
+  border-radius: 10px;
 }
 
 /* Optional: Styling for other elements */

@@ -4,8 +4,6 @@
 <head>
     <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/f545924fce.js" crossorigin="anonymous"></script>
-
-
     <title>Alarm Clock</title>
 </head>
 
@@ -13,53 +11,43 @@
 
     <div class="main-container">
 
-    <!-- Image heading  -->
-
-    <div class="image-container">
-        <div>
-            <img src="./142.jpg" alt="alarm" srcset="">
+        <!-- Image heading  -->
+        <div class="image-container">
+            <div>
+                <img src="./142.jpg" alt="alarm">
+            </div>
         </div>
 
-        <div></div>
-    </div>
-
-    <!-- current time -->
-    <div class="current_time">
-        <h1 id="time"></h1>
-
-    </div>
-    <div class="alram_box">
-        <h1 style="font-size: 60px;">Alarm</h1>
-        <div class="addAlram">
-            <form action="">
-
-                <input type="number" required name="hour" placeholder="Hour" id="hour" min="00" max="12">
-                <input type="number" required name="minute" placeholder="Minute" id="minute" min="0" max="59">
-                <input type="number" required name="second" placeholder="Second" id="second" min="0" max="59">
-                <select name="ampm" id="ampm">
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
-                </select>
-                <!-- Add button-->
-                <button type="submit" class="pushable">
-
-                    <span class="front">
-                        ADD
-                    </span>
-                </button>
-            </form>
+        <!-- Current time -->
+        <div class="current_time">
+            <h1 id="time"></h1>
         </div>
-        <div id="alram" class="alram">
+
+        <div class="alram_box">
+            <h1 style="font-size: 60px;">Alarm</h1>
+            <div class="addAlram">
+                <form action="">
+                    <input type="number" required name="hour" placeholder="Hour" id="hour" min="00" max="12">
+                    <input type="number" required name="minute" placeholder="Minute" id="minute" min="0" max="59">
+                    <input type="number" required name="second" placeholder="Second" id="second" min="0" max="59">
+                    <select name="ampm" id="ampm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <!-- Add button-->
+                    <button type="submit" class="pushable">
+                        <span class="front">ADD</span>
+                    </button>
+                </form>
+            </div>
+            <div id="alram" class="alram"></div>
         </div>
+
+        <!-- Audio element for the alarm sound -->
+        <audio id="alarmSound" src="./Alarm Clock Sound Effect Animated.mp3" preload="auto"></audio>
     </div>
-    <!-- Audio element for the alarm sound -->
-    <audio id="alarmSound" src="./Alarm Clock Sound Effect Animated.mp3"   preload="auto loop "></audio>
-
-
-</div>
 
     <script src="./script.js"></script>
-
 </body>
 
 </html>
