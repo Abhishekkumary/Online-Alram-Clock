@@ -1,13 +1,25 @@
 body {
   margin: 0px;
-  background-image: url("./pexels-catscoming-707582.jpg");
+  background-color: black;
+}
+
+@font-face {
+  font-family: "clockicons";
+  src: url("https://db.onlinewebfonts.com/t/84cb021d5f9af287ffff84b61beef6dc.eot");
+  src: url("https://db.onlinewebfonts.com/t/84cb021d5f9af287ffff84b61beef6dc.eot?#iefix") format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/84cb021d5f9af287ffff84b61beef6dc.woff2") format("woff2"),
+       url("https://db.onlinewebfonts.com/t/84cb021d5f9af287ffff84b61beef6dc.woff") format("woff"),
+       url("https://db.onlinewebfonts.com/t/84cb021d5f9af287ffff84b61beef6dc.ttf") format("truetype"),
+       url("https://db.onlinewebfonts.com/t/84cb021d5f9af287ffff84b61beef6dc.svg#clockicons") format("svg");
 }
 
 html, body {
-  height: 100%;
+  font-family: "clockicons", "Open Sans", "Segoe UI", sans-serif;
+  color: rgb(255, 149, 0);
+  background-color: #000;
+  margin: 0;
 }
 
-/* Main container */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -15,7 +27,30 @@ html, body {
   align-items: center;
 }
 
-/* Center the alarm_box */
+.current_time {
+  background-color: #000;
+  margin-bottom: 20px;
+  font-weight: 300;
+  color: rgb(255, 149, 0);
+  text-align: center;
+}
+
+#time {
+  font-size: 48px;
+  
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#date-info {
+  font-size: 24px;
+
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .alram_box {
   padding: 20px;
   border: 1px solid gray;
@@ -24,7 +59,7 @@ html, body {
   width: 50%;
   align-items: center;
   overflow: hidden;
-  background-color: lightslategray;
+  background-color: rgb(16, 16, 16);
   opacity: 0.9;
 }
 
@@ -38,9 +73,13 @@ html, body {
   left: -15%;
 }
 
+.color {
+  background-color: rgb(74, 174, 113);
+}
+
 .blocks button {
   position: relative;
-  background-color: lightslategray;
+  background-color: rgb(16, 16, 16);
   border: none;
   left: 15%;
 }
@@ -48,19 +87,17 @@ html, body {
 .blocks {
   display: block;
   width: 95%;
-  border-bottom: solid 2px;
+ 
 }
 
-/* Style the form to display elements in a row */
 .addAlram form {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Space between form elements */
+  gap: 10px;
 }
 
-/* Form elements styling */
 .addAlram input, .addAlram select, .addAlram button {
   margin: 5px;
   padding: 10px;
@@ -68,14 +105,159 @@ html, body {
   border-radius: 10px;
 }
 
-/* Optional: Styling for other elements */
-.image-container img {
-  max-width: 100%;
+.card {
+  width: 200px;
   height: 200px;
+  background: transparent;
+  border-radius: 50%;
+  border: 20px solid transparent;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px black, inset 2px 2px 2px black,
+    -1px -1px 5px rgba(0, 0, 0, 0.473), inset -1px -1px 5px rgba(0, 0, 0, 0.473);
 }
 
-.current_time {
-  margin-bottom: 20px;
-  font-size: 40px;
-  color: white;
+.numbers {
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 20px;
+  background-color: transparent;
 }
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 0.1rem;
+  height: 0.9rem;
+  background-color: rgb(106, 108, 117);
+}
+.number:nth-child(1) {
+  transform: translate(-50%, -50%) rotateZ(calc(30deg)) translateY(-80px);
+}
+
+.number:nth-child(2) {
+  transform: translate(-50%, -50%) rotateZ(calc(60deg)) translateY(-80px);
+}
+
+.number:nth-child(3) {
+  transform: translate(-50%, -50%) rotateZ(calc(90deg)) translateY(-80px);
+}
+
+.number:nth-child(4) {
+  transform: translate(-50%, -50%) rotateZ(calc(120deg)) translateY(-80px);
+}
+
+.number:nth-child(5) {
+  transform: translate(-50%, -50%) rotateZ(calc(150deg)) translateY(-80px);
+}
+
+.number:nth-child(6) {
+  transform: translate(-50%, -50%) rotateZ(calc(180deg)) translateY(-80px);
+}
+
+.number:nth-child(7) {
+  transform: translate(-50%, -50%) rotateZ(calc(210deg)) translateY(-80px);
+}
+
+.number:nth-child(8) {
+  transform: translate(-50%, -50%) rotateZ(calc(240deg)) translateY(-80px);
+}
+
+.number:nth-child(9) {
+  transform: translate(-50%, -50%) rotateZ(calc(270deg)) translateY(-80px);
+}
+
+.number:nth-child(10) {
+  transform: translate(-50%, -50%) rotateZ(calc(300deg)) translateY(-80px);
+}
+
+.number:nth-child(11) {
+  transform: translate(-50%, -50%) rotateZ(calc(330deg)) translateY(-80px);
+}
+
+.number:nth-child(12) {
+  transform: translate(-50%, -50%) rotateZ(calc(0deg)) translateY(-80px);
+}
+
+.number:nth-child(3),
+.number:nth-child(6),
+.number:nth-child(9),
+.number:nth-child(12) {
+  width: 0.3rem;
+  height: 1.5rem;
+}
+
+.needles {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.h,
+.m,
+.s,
+.center {
+  display: inline-block;
+  width: 7px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50% 50% 0 0;
+}
+
+.s {
+  transform: translate(-50%, -80%);
+}
+
+.h {
+  background-color: white;
+  transform-origin: 50% 100%;
+  animation: rotate 43200s 60s infinite linear;
+  transform: translate(-50%, -100%) rotateZ(5deg);
+  height: 2.5rem;
+  z-index: 1;
+}
+
+.m {
+  background-color: rgb(176, 176, 185);
+  z-index: 2;
+  height: 4rem;
+  width: 5px;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -100%) rotateZ(60deg);
+  animation: rotate 3600s 60s infinite steps(60, end);
+}
+
+.s {
+  background-color: rgb(240, 31, 31);
+  z-index: 3;
+  height: 5rem;
+  width: 3px;
+  transform-origin: 50% 80%;
+  animation: rotate 60s infinite steps(60, end);
+}
+
+.center {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border: solid 4px red;
+  z-index: 4;
+  border-radius: 50%;
+}
+
+
+

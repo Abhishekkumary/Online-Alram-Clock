@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const alarmList = document.getElementById("alram");
   const alarmSound = document.getElementById("alarmSound");
   const timeDisplay = document.getElementById("time");
+  const dateInfoDisplay = document.getElementById("date-info");
 
   let alarms = [];
 
@@ -15,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
       hours = hours % 12 || 12;
       const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
       timeDisplay.textContent = formattedTime;
+      const week = now.toLocaleString('default', { weekday: 'long' });
+    const month = now.toLocaleString('default', { month: 'long' });
+    const year = now.getFullYear();
+    dateInfoDisplay.textContent = `${week}, ${month} ${now.getDate()}, ${year}`;
       checkAlarms(formattedTime);
   }
 
