@@ -260,4 +260,9 @@ html, body {
 }
 
 
-
+/* Media query for screens 853px wide */
+@media (max-width: 853px) {
+  .alram_box {
+    width: 70%;
+  }
+}
