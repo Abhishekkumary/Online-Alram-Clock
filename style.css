@@ -225,29 +225,26 @@ html, body {
 .h {
   background-color: white;
   transform-origin: 50% 100%;
-  animation: rotate 43200s 60s infinite linear;
   transform: translate(-50%, -100%) rotateZ(5deg);
   height: 2.5rem;
-  z-index: 1;
+  
 }
 
 .m {
   background-color: rgb(176, 176, 185);
-  z-index: 2;
   height: 4rem;
   width: 5px;
   transform-origin: 50% 100%;
   transform: translate(-50%, -100%) rotateZ(60deg);
-  animation: rotate 3600s 60s infinite steps(60, end);
+  
+
 }
 
 .s {
   background-color: rgb(240, 31, 31);
-  z-index: 3;
   height: 5rem;
   width: 3px;
-  transform-origin: 50% 80%;
-  animation: rotate 60s infinite steps(60, end);
+  
 }
 
 .center {
@@ -260,9 +257,7 @@ html, body {
 }
 
 
-/* Media query for screens 853px wide */
 @media (max-width: 853px) {
   .alram_box {
-    width: 70%;
+    width: 80%;
   }
-}

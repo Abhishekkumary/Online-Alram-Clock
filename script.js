@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const week = now.toLocaleString('default', { weekday: 'long' });
     const month = now.toLocaleString('default', { month: 'long' });
     const year = now.getFullYear();
-    dateInfoDisplay.textContent = `${week}, ${month} ${now.getDate()}, ${year}`;
+    dateInfoDisplay.textContent = `${week}, ${month} ${now.getDate().toString().padStart(2, '0')}, ${year}`;
       checkAlarms(formattedTime);
   }
 
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   displayAlarms();
               }, 0);
           }
+          console.log(alarm);
       });
   }
 
